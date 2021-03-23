@@ -1,0 +1,1 @@
+Super simple javascript to check if touch events are correctly placed

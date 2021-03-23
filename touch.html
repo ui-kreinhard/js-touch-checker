@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tops Touch Checker</title>
+</head>
+<body>
+    <canvas id="testCanvas"></canvas>
+    <script type="application/javascript">
+        function drawCircle(ctx, x, y, radius, fill, stroke, strokeWidth) {
+            ctx.beginPath()
+            ctx.arc(x, y, radius, 0, 2 * Math.PI, false)
+            if (fill) {
+                ctx.fillStyle = fill
+                ctx.fill()
+            }
+            if (stroke) {
+                ctx.lineWidth = strokeWidth
+                ctx.strokeStyle = stroke
+                ctx.stroke()
+            }
+        }
+        
+        
+        (function () {
+            document.addEventListener('click', evt => {
+                const ctx = canvas.getContext('2d')
+                drawCircle(ctx, evt.clientX, evt.clientY, 15, false, true, 1)
+                console.log(evt)
+            }, true);
+
+            const canvas = document.getElementById("testCanvas");
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight; 
+        }) ()
+    </script>
+</body>
+</html>
